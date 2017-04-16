@@ -15,19 +15,21 @@ def is_in(f_path, regex_pattern):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) < 3:
+    if len(sys.argv) < 4:
         print 'invalid usage.'
-        print 'usage: python', sys.argv[0], 'src_dir', 'out_dir'
+        print 'usage: python', sys.argv[0], 'regex', 'src_dir', 'out_dir'
         sys.exit(-1)
-    src_dir = sys.argv[1]
-    out_dir = sys.argv[2]
+    regex_str = sys.argv[1]
+    src_dir = sys.argv[2]
+    out_dir = sys.argv[3]
     if not os.path.isdir(out_dir):
         os.makedirs(out_dir)
+    regex = re.compile(regex_str)
     # regex = re.compile(r'(?:\s4.*?\s1|\s1.*?\s4)', re.M | re.S)
     # regex = re.compile('JNI', re.M | re.S)
     # regex = re.compile('native', re.M | re.S)
     # regex = re.compile('4129', re.M | re.S)
-    regex = re.compile('msth', re.M | re.S)
+    # regex = re.compile('msth', re.M | re.S)
     # regex = re.compile('IBETH', re.M | re.I | re.S)
     # regex = re.compile(r'(?:\^|<<|>>|~)', re.M | re.S)
     # regex = re.compile(r'(?:<<|>>)', re.M | re.S)      # ~和^出现较多，因此只使用移位
@@ -45,4 +47,3 @@ if __name__ == '__main__':
                 shutil.copy(file_path, new_file_path)
                 needed_num += 1
                 print 'Found file-', needed_num
-
