@@ -24,7 +24,7 @@ if __name__ == '__main__':
     out_dir = sys.argv[3]
     if not os.path.isdir(out_dir):
         os.makedirs(out_dir)
-    regex = re.compile(regex_str)
+    regex = re.compile(regex_str, re.M | re.S | re.I)
     # regex = re.compile(r'(?:\s4.*?\s1|\s1.*?\s4)', re.M | re.S)
     # regex = re.compile('JNI', re.M | re.S)
     # regex = re.compile('native', re.M | re.S)
