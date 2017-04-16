@@ -27,8 +27,8 @@ if __name__ == '__main__':
     # regex = re.compile('JNI', re.M | re.S)
     # regex = re.compile('native', re.M | re.S)
     # regex = re.compile('4129', re.M | re.S)
-    #regex = re.compile('81', re.M | re.S)
-    regex = re.compile('mstshash', re.M | re.I | re.S)
+    regex = re.compile('msth', re.M | re.S)
+    # regex = re.compile('IBETH', re.M | re.I | re.S)
     # regex = re.compile(r'(?:\^|<<|>>|~)', re.M | re.S)
     # regex = re.compile(r'(?:<<|>>)', re.M | re.S)      # ~和^出现较多，因此只使用移位
     num = 0
